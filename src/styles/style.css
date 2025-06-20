@@ -1,0 +1,141 @@
+@import url(normalize.css);
+
+:root {
+  --main-bg-color: rgb(255, 255, 255);
+  --calculator-bg-color: rgb(60, 14, 61);
+
+  --buttons-bg-color: rgb(254, 247, 222);
+  --btn-oper-bg-color: rgb(180, 151, 214);
+  --btn-fun-bg-color: rgb(216, 204, 227);
+
+  --btn-hover-color: rgba(193, 193, 193, 0.7);
+
+  --title-text-color: rgb(46, 12, 48);
+
+  --black-text-color: rgb(0, 0, 0);
+  --white-text-color: rgb(255, 255, 255);
+  --light-text-color: rgb(249, 224, 255);
+}
+
+body.dark {
+  --main-bg-color: rgb(34, 7, 38);
+  --calculator-bg-color: rgb(244, 171, 209);
+
+  --buttons-bg-color: rgb(150, 145, 126);
+  --btn-oper-bg-color: rgb(136, 114, 161);
+  --btn-fun-bg-color: rgb(151, 142, 160);
+
+  --btn-hover-color: rgba(116, 116, 116, 0.7);
+
+  --title-text-color: rgb(235, 219, 236);
+}
+
+body {
+  background-color: var(--main-bg-color);
+  font-family: monospace;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: var(--title-text-color);
+  font-size: 40px;
+}
+
+.theme-toggle {
+  margin-bottom: 25px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--calculator-bg-color);
+  color: var(--white-text-color);
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.heme-toggle:active {
+  opacity: 90%;
+}
+
+.calculator {
+  background-color: var(--calculator-bg-color);
+  padding: 15px;
+  max-width: 360px;
+  border-radius: 15px;
+}
+
+.display {
+  background-color: inherit;
+  color: var(--light-text-color);
+  text-align: right;
+  font-size: 50px;
+  border: none;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.extraDisplay {
+  color: var(--light-text-color);
+  font-size: 16px;
+  text-align: right;
+  margin-bottom: 5px;
+  height: 16px;
+}
+
+.buttonsBox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 35px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  color: var(--black-text-color);
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--btn-hover-color);
+}
+
+.btn:active {
+  opacity: 90%;
+}
+
+.number {
+  background-color: var(--buttons-bg-color);
+}
+
+.operator {
+  background-color: var(--btn-oper-bg-color);
+  font-weight: 600;
+}
+
+.function {
+  background-color: var(--btn-fun-bg-color);
+  font-weight: 600;
+}
+
+.zero {
+  grid-column: span 2;
+}
