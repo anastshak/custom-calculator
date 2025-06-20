@@ -7,13 +7,17 @@ export default function createCalculator() {
   app.id = 'root';
   document.body.appendChild(app);
 
+  const heading = document.createElement('div');
+  heading.className = 'heading';
+  app.appendChild(heading);
+
   const title = document.createElement('h1');
   title.className = 'title';
-  title.textContent = 'simple calculator';
-  app.appendChild(title);
+  title.textContent = 'calculator';
+  heading.appendChild(title);
 
   const themeToggle = createThemeToggle();
-  app.appendChild(themeToggle);
+  heading.appendChild(themeToggle);
 
   const calculator = document.createElement('main');
   calculator.className = 'calculator';
