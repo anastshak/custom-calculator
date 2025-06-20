@@ -1,10 +1,13 @@
-# simple-calculator
+# custom-calculator
 
 ## Task | Задание
 
-Innowise Lab Internship: Level 0: Simple calculator
+Innowise Lab Internship: Level 0: Custom calculator
 
-[Link to task description | Описание задания](https://docs.google.com/document/d/1zpXXeSae-BlcxPKgw3DhxZA92cspVailrPYoaXSYrW8/edit?tab=t.0#heading=h.cfna4so9wux2)
+The project is based on the pet project “simple-calculator”, but has been reworked with new functionality and testing. |
+Проект основан на пет-проекте "simple-calculator", но переработан с новый функционалом и тестированием.
+
+[Link to task description | Описание задания](https://drive.google.com/file/d/15jVnBPXaZrjs99KOUxp4TGq6Inau6xq_/view)
 
 ## Technologies used | Используемые технологии
 
@@ -17,7 +20,7 @@ Innowise Lab Internship: Level 0: Simple calculator
 1. Clone this repository | Склонировать репозиторий
 
 ```cmd
-git clone https://github.com/anastshak/simple-calculator.git
+git clone https://github.com/anastshak/custom-calculator.git
 ```
 
 2. Install dependencies | Установить все зависимости
@@ -60,7 +63,7 @@ npm run format
 
 ## The app structure | Структура приложения
 
-> simple-calculator
+> custom-calculator
 
 > > src
 
