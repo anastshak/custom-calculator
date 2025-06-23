@@ -82,7 +82,7 @@ body {
   background-color: var(--calculator-bg-color);
   padding: 15px;
   max-width: 360px;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .display {
@@ -107,7 +107,7 @@ body {
 .buttonsBox {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  gap: 5px;
   margin-top: 20px;
 }
 
@@ -115,7 +115,7 @@ body {
   padding: 10px;
   font-size: 35px;
   border: none;
-  border-radius: 10px;
+  border-radius: 2px;
   cursor: pointer;
   color: var(--black-text-color);
   transition: background-color 0.3s ease;
