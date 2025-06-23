@@ -1,4 +1,4 @@
-import { buttonValues, operatorValues, functionValues } from '../constants/constants';
+import { buttonValues, operatorValues, functionValues, memoryValues } from '../constants/constants';
 import onButtonClick from '../handlers/onButtonClick';
 import createThemeToggle from './theme-switch';
 
@@ -46,8 +46,12 @@ export default function createCalculator() {
       button.classList.add('operator');
     } else if (functionValues.includes(value)) {
       button.classList.add('function');
+    } else if (memoryValues.includes(value)) {
+      button.classList.add('memory');
     } else if (value === '0') {
       button.classList.add('zero', 'number');
+    } else if (value === '?') {
+      button.classList.add('extraBtn', 'function');
     } else {
       button.classList.add('number');
     }

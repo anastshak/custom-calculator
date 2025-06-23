@@ -1,23 +1,39 @@
 export const buttonValues = [
+  'MC',
+  '√',
+  'x²',
   'AC',
   '+/-',
   '%',
   '÷',
+  'M+',
+  '³√',
+  'x³',
   '7',
   '8',
   '9',
   '×',
+  'M-',
+  'ʸ√',
+  'xʸ',
   '4',
   '5',
   '6',
   '-',
+  'MR',
+  'x!',
+  '10ˣ',
   '1',
   '2',
   '3',
   '+',
+  '?',
+  '1/x',
   '0',
   '.',
   '=',
 ];
+
 export const operatorValues = ['+', '-', '×', '÷', '='];
-export const functionValues = ['AC', '+/-', '%'];
+export const functionValues = ['AC', '+/-', '%', 'x²', 'x³', 'xʸ', '10ˣ', '1/x', '√', '³√', 'ʸ√', 'x!'];
+export const memoryValues = ['MC', 'M+', 'M-', 'MR'];

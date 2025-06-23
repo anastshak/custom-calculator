@@ -7,6 +7,7 @@
   --buttons-bg-color: rgb(254, 247, 222);
   --btn-oper-bg-color: rgb(180, 151, 214);
   --btn-fun-bg-color: rgb(216, 204, 227);
+  --btn-mem-bg-color: rgb(231, 227, 234);
 
   --btn-hover-color: rgba(193, 193, 193, 0.7);
 
@@ -24,6 +25,7 @@ body.dark {
   --buttons-bg-color: rgb(150, 145, 126);
   --btn-oper-bg-color: rgb(136, 114, 161);
   --btn-fun-bg-color: rgb(151, 142, 160);
+  --btn-mem-bg-color: rgb(143, 140, 145);
 
   --btn-hover-color: rgba(116, 116, 116, 0.7);
 
@@ -81,7 +83,6 @@ body {
 .calculator {
   background-color: var(--calculator-bg-color);
   padding: 15px;
-  max-width: 360px;
   border-radius: 5px;
 }
 
@@ -106,7 +107,7 @@ body {
 
 .buttonsBox {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 5px;
   margin-top: 20px;
 }
@@ -143,6 +144,12 @@ body {
   font-weight: 600;
 }
 
-.zero {
+.memory {
+  background-color: var(--btn-mem-bg-color);
+  font-weight: 600;
+}
+
+.zero,
+.extraBtn {
   grid-column: span 2;
 }
