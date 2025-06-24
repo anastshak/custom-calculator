@@ -1,30 +1,25 @@
-let A = null;
-let B = null;
-let operator = null;
+let state = {
+  currentOperand: '',
+  previousOperand: '',
+  operator: null,
+  memory: 0,
+  tempValue: null,
+  pendingFunction: null,
+};
 
-export function getA() {
-  return A;
-}
-export function setA(value) {
-  A = value;
-}
-
-export function getB() {
-  return B;
-}
-export function setB(value) {
-  B = value;
+export function getState() {
+  return { ...state };
 }
 
-export function getOperator() {
-  return operator;
-}
-export function setOperator(value) {
-  operator = value;
+export function updateState(newState) {
+  state = { ...state, ...newState };
 }
 
-export function clear() {
-  A = null;
-  B = null;
-  operator = null;
+export function clearCalculation() {
+  state.currentOperand = '';
+  state.previousOperand = '';
+  state.operator = null;
+  state.memory = 0;
+  state.tempValue = null;
+  state.pendingFunction = null;
 }
