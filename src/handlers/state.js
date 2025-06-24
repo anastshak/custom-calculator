@@ -19,7 +19,6 @@ export function clearCalculation() {
   state.currentOperand = '';
   state.previousOperand = '';
   state.operator = null;
-  state.memory = 0;
   state.tempValue = null;
   state.pendingFunction = null;
 }
