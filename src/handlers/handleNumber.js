@@ -1,9 +1,12 @@
+import { getState, updateState } from './state';
+
 export default function handleNumber(value, display) {
-  if (value === '.') {
-    if (!display.value.includes('.')) {
-      display.value += '.';
-    }
-  } else {
-    display.value += value;
-  }
+  const { currentOperand, pendingFunction } = getState();
+
+  if (value === '.' && currentOperand.includes('.')) return;
+
+  const newValue = value === '.' && currentOperand === '' ? '0.' : display.value + value;
+  display.value = newValue;
+
+  updateState({ currentOperand: newValue, pendingFunction });
 }
