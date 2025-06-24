@@ -1,27 +1,51 @@
-import { getA, setA, getB, setB, getOperator, setOperator, clear } from './state';
 import calculate from './calculate';
+import { getState, updateState, clearCalculation } from './state';
+import handleBinaryFunction from './handleBinaryFunction';
 
 export default function handleOperator(value, display, extraDisplay) {
+  const { currentOperand, previousOperand, operator, tempValue, pendingFunction } = getState();
+
   if (value === '=') {
-    if (getA() !== null && getOperator() && display.value !== '') {
-      setB(display.value);
-      const result = calculate(parseFloat(getA()), parseFloat(getB()), getOperator());
+    // Обработка бинарных функций (xʸ, ʸ√)
+    const handled = handleBinaryFunction(currentOperand, tempValue, pendingFunction, display, extraDisplay);
+    if (handled) return;
+
+    // Обычное арифметическое вычисление
+    if (previousOperand && operator && currentOperand) {
+      const a = parseFloat(previousOperand);
+      const b = parseFloat(currentOperand);
+      const result = calculate(a, b, operator);
+
       display.value = result;
-      extraDisplay.textContent = `${getA()} ${getOperator()} ${getB()} =`;
-      clear();
+      extraDisplay.textContent = `${previousOperand} ${operator} ${currentOperand} =`;
+      clearCalculation();
+      updateState({ currentOperand: result.toString() });
     }
   } else {
-    if (getA() !== null && getOperator() && display.value !== '') {
-      setB(display.value);
-      const result = calculate(parseFloat(getA()), parseFloat(getB()), getOperator());
+    // Установка оператора и промежуточные вычисления
+    if (previousOperand && operator && currentOperand) {
+      const a = parseFloat(previousOperand);
+      const b = parseFloat(currentOperand);
+      const result = calculate(a, b, operator);
+
       display.value = result;
-      setA(result);
-    } else if (display.value !== '') {
-      setA(display.value);
+      updateState({
+        previousOperand: result.toString(),
+        currentOperand: '',
+        operator: value,
+      });
+    } else if (currentOperand) {
+      updateState({
+        previousOperand: currentOperand,
+        currentOperand: '',
+        operator: value,
+      });
+    } else if (previousOperand) {
+      updateState({ operator: value });
     }
 
-    setOperator(value);
-    extraDisplay.textContent = `${getA()} ${getOperator()}`;
     display.value = '';
+    const updatedState = getState();
+    extraDisplay.textContent = `${updatedState.previousOperand} ${updatedState.operator}`;
   }
 }
