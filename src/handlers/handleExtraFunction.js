@@ -1,4 +1,4 @@
-import { isValidNumber } from '../constants/constants';
+import { isValidNumber } from '../utils/utils';
 
 export function power2(x) {
   if (!isValidNumber(x)) return 'Error';

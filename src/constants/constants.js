@@ -37,7 +37,3 @@ export const buttonValues = [
 export const operatorValues = ['+', '-', '×', '÷', '='];
 export const functionValues = ['AC', '+/-', '%', 'x²', 'x³', 'xʸ', '10ˣ', '1/x', '√', '³√', 'ʸ√', 'x!'];
 export const memoryValues = ['MC', 'M+', 'M-', 'MR'];
-
-export const isValidNumber = (num) => {
-  return typeof num === 'number' && !isNaN(num) && isFinite(num);
-};
