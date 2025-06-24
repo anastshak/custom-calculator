@@ -2,8 +2,8 @@ import { isValidNumber } from '../utils/utils';
 import { powerY, rootY } from './handleExtraFunction';
 import { updateState } from './state';
 
-export default function handleBinaryFunction(pendingFunction, tempValue, display, extraDisplay) {
-  if (!pendingFunction || tempValue === null || display.value === '') return;
+export default function handleBinaryFunction(currentOperand, tempValue, pendingFunction, display, extraDisplay) {
+  if (!pendingFunction || tempValue === null || display.value === '' || currentOperand === '') return false;
 
   const y = parseFloat(display.value);
   if (!isValidNumber(y)) {
@@ -23,7 +23,7 @@ export default function handleBinaryFunction(pendingFunction, tempValue, display
       extraDisplay.textContent = `${y}√${tempValue} =`;
       break;
     default:
-      return;
+      return false;
   }
 
   if (!isValidNumber(result)) {
@@ -37,4 +37,6 @@ export default function handleBinaryFunction(pendingFunction, tempValue, display
     tempValue: null,
     pendingFunction: null,
   });
+
+  return true;
 }
