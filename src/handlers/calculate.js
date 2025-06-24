@@ -1,14 +1,22 @@
-export default function calculate(numA, numB, operator) {
+import { isValidNumber } from '../utils/utils';
+
+export default function calculate(a, b, operator) {
+  if (!isValidNumber(a) || !isValidNumber(b)) return 'Error';
+
   switch (operator) {
     case '+':
-      return numA + numB;
+      return a + b;
+
     case '-':
-      return numA - numB;
+      return a - b;
+
     case '×':
-      return numA * numB;
+      return a * b;
+
     case '÷':
-      return numB === 0 ? 'Error' : numA / numB;
+      return b === 0 ? 'Error' : a / b;
+
     default:
-      return numB;
+      return b;
   }
 }
