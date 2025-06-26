@@ -1,10 +1,6 @@
 import { operatorValues, functionValues, memoryValues } from '../constants/constants';
 import { commandManager } from '../commands/CommandManager';
-import OperatorCommand from '../commands/OperatorCommand';
-import ClearCommand from '../commands/ClearCommand';
-import FunctionCommand from '../commands/FunctionCommand';
-import MemoryCommand from '../commands/MemoryCommand';
-import NumberCommand from '../commands/NumberCommand';
+import { createCommand } from 'src/commands/CommandFactory';
 
 export default function handleCommandClick(value, display, extraDisplay) {
   // undo
@@ -15,26 +11,26 @@ export default function handleCommandClick(value, display, extraDisplay) {
 
   if (operatorValues.includes(value)) {
     // + - * /
-    const command = new OperatorCommand({ operator: value, display, extraDisplay });
+    const command = createCommand('operator', { value, display, extraDisplay });
     commandManager.executeCommand(command);
   } else if (functionValues.includes(value)) {
     // functions
     if (value === 'AC') {
       // AC
-      const command = new ClearCommand({ display, extraDisplay });
+      const command = createCommand('clear', { display, extraDisplay });
       commandManager.executeCommand(command);
       return;
     } else {
-      const command = new FunctionCommand({ display, extraDisplay, funcName: value });
+      const command = createCommand('function', { funcName: value, display, extraDisplay });
       commandManager.executeCommand(command);
     }
   } else if (memoryValues.includes(value)) {
     // MC M+ M- MR
-    const command = new MemoryCommand({ value, display });
+    const command = createCommand('memory', { value, display });
     commandManager.executeCommand(command);
   } else {
     // numbers
-    const command = new NumberCommand({ value, display });
+    const command = createCommand('number', { value, display });
     commandManager.executeCommand(command);
   }
 }
