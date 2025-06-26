@@ -1,8 +1,8 @@
 import Command from './Command';
 import { getState, updateState, clearCalculation } from '../state/state';
-import calculate from '../handlers/calculate';
 import BinaryFunctionCommand from './BinaryFunctionCommand';
 import { commandManager } from './CommandManager';
+import calculate from '../utils/calculate';
 
 export default class OperatorCommand extends Command {
   constructor(operator, display, extraDisplay) {
