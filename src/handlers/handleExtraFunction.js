@@ -1,5 +1,16 @@
 import { isValidNumber } from '../utils/utils';
 
+export function changeSign(x) {
+  if (x && x !== '0') {
+    return -x;
+  }
+}
+
+export function percent(x) {
+  if (!isValidNumber(x)) return 'Error';
+  return x / 100;
+}
+
 export function power2(x) {
   if (!isValidNumber(x)) return 'Error';
   return x * x;
