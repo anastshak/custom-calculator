@@ -50,7 +50,7 @@ export default function createCalculator() {
       button.classList.add('memory');
     } else if (value === '0') {
       button.classList.add('zero', 'number');
-    } else if (value === '?') {
+    } else if (value === '←') {
       button.classList.add('extraBtn', 'function');
     } else {
       button.classList.add('number');
