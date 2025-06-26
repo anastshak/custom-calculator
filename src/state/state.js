@@ -5,6 +5,7 @@ let state = {
   memory: 0,
   tempValue: null,
   pendingFunction: null,
+  shouldClearDisplay: false, // for binary func
 };
 
 export function getState() {
@@ -21,4 +22,5 @@ export function clearCalculation() {
   state.operator = null;
   state.tempValue = null;
   state.pendingFunction = null;
+  state.shouldClearDisplay = false;
 }
