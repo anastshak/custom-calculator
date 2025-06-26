@@ -8,7 +8,10 @@ export default defineConfig([
   {
     files: ['**/*.{js,mjs,cjs}'],
     languageOptions: {
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...globals.jest,
+      },
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
