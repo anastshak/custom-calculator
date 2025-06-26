@@ -1,5 +1,5 @@
 import { buttonValues, operatorValues, functionValues, memoryValues } from '../constants/constants';
-import onButtonClick from '../handlers/onButtonClick';
+import handleCommandClick from '../handlers/handleCommandClick';
 import createThemeToggle from './theme-switch';
 
 export default function createCalculator() {
@@ -56,7 +56,7 @@ export default function createCalculator() {
       button.classList.add('number');
     }
 
-    button.addEventListener('click', () => onButtonClick(value, display, extraDisplay));
+    button.addEventListener('click', () => handleCommandClick(value, display, extraDisplay));
     buttonsBox.appendChild(button);
   });
 }

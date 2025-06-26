@@ -1,19 +1,12 @@
 import { operatorValues, functionValues, memoryValues } from '../constants/constants';
-// import handleOperator from './handleOperator';
-// import handleFunction from './handleFunction';
-// import handleNumber from './handleNumber';
-// import handleMemory from './handleMemory';
-
 import { commandManager } from '../commands/CommandManager';
-import NumberCommand from '../commands/NumberCommand';
 import OperatorCommand from '../commands/OperatorCommand';
 import ClearCommand from '../commands/ClearCommand';
-import MemoryCommand from '../commands/MemoryCommand';
-
-// import { isValidNumber } from '../utils/utils';
 import FunctionCommand from '../commands/FunctionCommand';
+import MemoryCommand from '../commands/MemoryCommand';
+import NumberCommand from '../commands/NumberCommand';
 
-export default function onButtonClick(value, display, extraDisplay) {
+export default function handleCommandClick(value, display, extraDisplay) {
   // undo
   if (value === '←') {
     commandManager.undo();
