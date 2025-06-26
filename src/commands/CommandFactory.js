@@ -4,7 +4,7 @@ import FunctionCommand from './FunctionCommand';
 import MemoryCommand from './MemoryCommand';
 import ClearCommand from './ClearCommand';
 
-export function createCommand(type, payload) {
+export default function createCommand(type, payload) {
   switch (type) {
     case 'number':
       return new NumberCommand(payload);

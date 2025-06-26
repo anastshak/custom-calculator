@@ -1,6 +1,6 @@
 import { operatorValues, functionValues, memoryValues } from '../constants/constants';
 import { commandManager } from '../commands/CommandManager';
-import { createCommand } from 'src/commands/CommandFactory';
+import createCommand from '../commands/CommandFactory';
 
 export default function handleCommandClick(value, display, extraDisplay) {
   // undo
