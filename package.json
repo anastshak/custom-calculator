@@ -1,7 +1,6 @@
 {
   "name": "custom-calculator",
   "version": "1.0.0",
-  "type": "module",
   "description": "Innowise Lab Internship: Custom calculator",
   "main": "index.js",
   "scripts": {
