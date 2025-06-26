@@ -11,9 +11,10 @@ The project is based on the pet project “simple-calculator”, but has been re
 
 ## Technologies used | Используемые технологии
 
-- bundler - webpack
+- webpack
 - javascript
 - eslint, prettier, husky
+- jest
 
 ## How to run the app | Как запустить приложение
 
@@ -61,21 +62,35 @@ npm run ci:format
 npm run format
 ```
 
+5. For testing the application work to validate the behavior of all mathematical function | Для тестирования работы приложения, чтобы проверить поведение всех математических функций
+
+```cmd
+npm run test
+```
+
 ## The app structure | Структура приложения
 
 > custom-calculator
 
 > > src
 
+> > > tests - тесты математических функций
+
 > > > assets - изображения (фавиконка)
+
+> > > commands - комманды и менеджер комманд (логика приложения)
 
 > > > components - компоненты (главный слой + переключатель темы)
 
 > > > constants - константы
 
-> > > handlers - логика приложения
+> > > handlers - обработчики функций и кнопок
+
+> > > state - состояние
 
 > > > styles - стили
+
+> > > utils - дополнительные функции
 
 > > > index.js
 
