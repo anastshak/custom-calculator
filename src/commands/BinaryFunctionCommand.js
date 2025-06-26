@@ -1,5 +1,5 @@
 import Command from './Command';
-import { powerY, rootY } from '../handlers/handleExtraFunction';
+import { powerY, rootY } from '../handlers/handleFunction';
 import { getState, updateState } from '../state/state';
 import { isValidNumber } from '../utils/utils';
 

@@ -9,7 +9,7 @@ import {
   cbrt,
   changeSign,
   percent,
-} from '../handlers/handleExtraFunction';
+} from '../handlers/handleFunction';
 import { getState, updateState } from '../state/state';
 import { isValidNumber } from '../utils/utils';
 
