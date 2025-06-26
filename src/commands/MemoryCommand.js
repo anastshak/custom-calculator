@@ -3,7 +3,7 @@ import { getState, updateState } from '../state/state';
 import { isValidNumber } from '../utils/utils';
 
 export default class MemoryCommand extends Command {
-  constructor(value, display) {
+  constructor({ value, display }) {
     super();
     this.value = value;
     this.display = display;

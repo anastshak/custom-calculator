@@ -15,13 +15,13 @@ export default function handleCommandClick(value, display, extraDisplay) {
 
   if (operatorValues.includes(value)) {
     // + - * /
-    const command = new OperatorCommand(value, display, extraDisplay);
+    const command = new OperatorCommand({ operator: value, display, extraDisplay });
     commandManager.executeCommand(command);
   } else if (functionValues.includes(value)) {
     // functions
     if (value === 'AC') {
       // AC
-      const command = new ClearCommand(display, extraDisplay);
+      const command = new ClearCommand({ display, extraDisplay });
       commandManager.executeCommand(command);
       return;
     } else {
@@ -30,11 +30,11 @@ export default function handleCommandClick(value, display, extraDisplay) {
     }
   } else if (memoryValues.includes(value)) {
     // MC M+ M- MR
-    const command = new MemoryCommand(value, display);
+    const command = new MemoryCommand({ value, display });
     commandManager.executeCommand(command);
   } else {
     // numbers
-    const command = new NumberCommand(value, display);
+    const command = new NumberCommand({ value, display });
     commandManager.executeCommand(command);
   }
 }

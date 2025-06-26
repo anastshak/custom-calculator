@@ -5,7 +5,7 @@ import { commandManager } from './CommandManager';
 import calculate from '../utils/calculate';
 
 export default class OperatorCommand extends Command {
-  constructor(operator, display, extraDisplay) {
+  constructor({ operator, display, extraDisplay }) {
     super();
     this.operator = operator;
 

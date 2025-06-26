@@ -2,7 +2,7 @@ import Command from './Command';
 import { getState, updateState, clearCalculation } from '../state/state';
 
 export default class ClearCommand extends Command {
-  constructor(display, extraDisplay) {
+  constructor({ display, extraDisplay }) {
     super();
     this.display = display;
     this.extraDisplay = extraDisplay;

@@ -1,9 +1,8 @@
-// input numbers
 import Command from './Command';
 import { getState, updateState } from '../state/state';
 
 export default class NumberCommand extends Command {
-  constructor(value, display) {
+  constructor({ value, display }) {
     super();
     this.value = value;
     this.display = display;
@@ -19,7 +18,7 @@ export default class NumberCommand extends Command {
 
     if (shouldClearDisplay) {
       newValue = this.value === '.' ? '0.' : this.value;
-      updateState({ shouldClearDisplay: false }); // сброс флага
+      updateState({ shouldClearDisplay: false });
     } else {
       newValue = this.value === '.' && this.prevValue === '' ? '0.' : this.prevValue + this.value;
     }
