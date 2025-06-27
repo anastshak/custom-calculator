@@ -28,8 +28,7 @@ export default class FunctionCommand extends Command {
   execute() {
     const x = parseFloat(this.display.value);
 
-    if (!isValidNumber(x)) {
-      this.display.value = 'Error';
+    if (!this.display.value || !isValidNumber(x)) {
       return;
     }
 

@@ -22,6 +22,10 @@ export default class OperatorCommand extends Command {
     const a = parseFloat(previousOperand);
     const b = parseFloat(currentOperand);
 
+    if (!currentOperand) {
+      return;
+    }
+
     if (this.operator === '=') {
       // Обработка бинарных функций (xʸ, ʸ√)
       if (pendingFunction && tempValue !== null && currentOperand !== '') {
