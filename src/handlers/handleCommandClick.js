@@ -11,7 +11,7 @@ export default function handleCommandClick(value, display, extraDisplay) {
 
   if (operatorValues.includes(value)) {
     // + - * /
-    const command = createCommand('operator', { value, display, extraDisplay });
+    const command = createCommand('operator', { operator: value, display, extraDisplay });
     commandManager.executeCommand(command);
   } else if (functionValues.includes(value)) {
     // functions

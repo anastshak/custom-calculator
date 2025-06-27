@@ -20,7 +20,16 @@ export default class NumberCommand extends Command {
       newValue = this.value === '.' ? '0.' : this.value;
       updateState({ shouldClearDisplay: false });
     } else {
-      newValue = this.value === '.' && this.prevValue === '' ? '0.' : this.prevValue + this.value;
+      // продолжение ввода
+      if (this.prevValue === '0' && this.value !== '.') {
+        // заменяем 0 на цифру
+        newValue = this.value;
+      } else if (this.prevValue.includes('.') && this.value === '.') {
+        // игнорируем повторный ввод точки
+        newValue = this.prevValue;
+      } else {
+        newValue = this.value === '.' && this.prevValue === '' ? '0.' : this.prevValue + this.value;
+      }
     }
 
     this.display.value = newValue;

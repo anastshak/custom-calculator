@@ -30,11 +30,15 @@ export default class MemoryCommand extends Command {
       case 'M+':
         if (!isValidNumber(current)) return;
         updateState({ memory: memory + current });
+        this.display.value = '';
+        updateState({ currentOperand: '' });
         break;
 
       case 'M-':
         if (!isValidNumber(current)) return;
         updateState({ memory: memory - current });
+        this.display.value = '';
+        updateState({ currentOperand: '' });
         break;
     }
   }
