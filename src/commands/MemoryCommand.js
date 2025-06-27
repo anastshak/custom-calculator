@@ -1,6 +1,6 @@
 import Command from './Command';
 import { getState, updateState } from '../state/state';
-import { isValidNumber } from '../utils/utils';
+import { isValidNumber } from '../utils/primitives';
 
 export default class MemoryCommand extends Command {
   constructor({ value, display }) {

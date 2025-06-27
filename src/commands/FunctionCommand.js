@@ -11,7 +11,7 @@ import {
   percent,
 } from '../handlers/handleFunction';
 import { getState, updateState } from '../state/state';
-import { isValidNumber } from '../utils/utils';
+import { isValidNumber } from '../utils/primitives';
 
 export default class FunctionCommand extends Command {
   constructor({ display, extraDisplay, funcName }) {

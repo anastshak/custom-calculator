@@ -1,4 +1,4 @@
-import { isValidNumber } from '../utils/utils';
+import { isValidNumber } from '../utils/primitives';
 
 export function changeSign(x) {
   if (x && x !== '0') {
